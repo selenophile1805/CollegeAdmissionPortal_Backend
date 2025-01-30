@@ -1,71 +1,102 @@
-# College Admission Portal - Backend
+# College Admission Portal Backend
 
 ## Overview
-This is the backend service for the College Admission Portal, built using **Spring Boot**. It provides RESTful APIs for managing students, courses, and departments with secure authentication.
+This project is a backend service for a College Admission Portal. It is built using **Spring Boot** and provides RESTful APIs to manage **courses, departments, and students**.
 
 ## Features
-- **Student Management**: Add, update, delete, and retrieve student records.
-- **Department Management**: CRUD operations for college departments.
-- **Course Management**: CRUD operations for courses.
-- **Authentication & Security**: Custom security configuration with OAuth2 or JWT (planned).
-- **Spring Data MongoDB**: Repository-based database access.
-- **RESTful API**: Well-structured API endpoints following best practices.
+- **Manage Courses**: Add, update, retrieve, and delete courses.
+- **Manage Departments**: Add, update, retrieve, and delete departments.
+- **Manage Students**: Add, update, retrieve, and delete student records.
 
 ## Tech Stack
-- **Backend**: Java, Spring Boot
-- **Database**: MongoDB
-- **Security**: Spring Security (OAuth2 or JWT)
-- **Build Tool**: Maven
+- **Java** (Spring Boot, Spring MVC, Spring Data JPA)
+- **MongoDB** (for database storage)
+- **Maven** (dependency management)
+- **IntelliJ IDEA** (development environment)
 
-## Installation & Setup
-### **Prerequisites**
+## Installation and Setup
+### Prerequisites
 - Java 17+
 - Maven
-- MongoDB
+- MongoDB installed and running
 
-### **Clone the Repository**
-```sh
-git clone https://github.com/selenophile1805/CollegeAdmissionPortal_Backend.git
-cd CollegeAdmissionPortal_Backend
-```
-
-### **Set Up Configuration**
-Create a `.env` file (or update `application.properties` / `application.yml`) and configure database credentials and OAuth secrets.
-
-### **Run the Application**
-```sh
-mvn spring-boot:run
-```
-
-The backend will be available at `http://localhost:8080/`.
+### Steps to Run the Project
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/selenophil1805/CollegeAdmissionPortal_Backend.git
+   cd College_Admission_Portal
+   ```
+2. **Build the project**
+   ```sh
+   mvn clean install
+   ```
+3. **Run the application**
+   ```sh
+   mvn spring-boot:run
+   ```
+4. The application will start at **http://localhost:8080**
 
 ## API Endpoints
-| Method | Endpoint | Description |
-|--------|---------|-------------|
-| `GET` | `/students` | Get all students |
-| `POST` | `/students` | Add a new student |
-| `GET` | `/departments` | Get all departments |
-| `POST` | `/departments` | Add a new department |
-| `GET` | `/courses` | Get all courses |
-| `POST` | `/courses` | Add a new course |
 
-## Environment Variables
-Set up environment variables for secrets:
+### Courses API
+| Method | Endpoint            | Description |
+|--------|---------------------|-------------|
+| POST   | `/courses`          | Add a new course |
+| GET    | `/courses`          | Get all courses |
+| GET    | `/courses/{id}`     | Get course by ID |
+| PUT    | `/courses/{id}`     | Update course by ID |
+| DELETE | `/courses/{id}`     | Delete course by ID |
+
+### Departments API
+| Method | Endpoint               | Description |
+|--------|------------------------|-------------|
+| POST   | `/departments`         | Add a new department |
+| GET    | `/departments`         | Get all departments |
+| GET    | `/departments/{id}`    | Get department by ID |
+| PUT    | `/departments/{id}`    | Update department by ID |
+| DELETE | `/departments/{id}`    | Delete department by ID |
+
+### Students API
+| Method | Endpoint          | Description |
+|--------|------------------|-------------|
+| POST   | `/students`      | Add a new student |
+| GET    | `/students`      | Get all students |
+| GET    | `/students/{id}` | Get student by ID |
+| PUT    | `/students/{id}` | Update student by ID |
+| DELETE | `/students/{id}` | Delete student by ID |
+
+## Project Structure
 ```
-MONGO_URI=mongodb://localhost:27017/college_portal
-OAUTH_CLIENT_ID=your-client-id
-OAUTH_CLIENT_SECRET=your-client-secret
+College_Admission_Portal/
+│── src/
+│   ├── main/
+│   │   ├── java/com/chetan/College_Admission_Portal/
+│   │   │   ├── config/                # Security Configurations
+│   │   │   ├── controller/            # REST Controllers
+│   │   │   ├── entity/                # Entity Classes
+│   │   │   ├── repository/            # MongoDB Repositories
+│   │   │   ├── service/               # Service Classes
+│   │   │   ├── CollegeAdmissionPortalApplication.java
+│   │   ├── resources/
+│   │   │   ├── application.properties
+│── pom.xml
+│── .gitignore
+│── README.md
 ```
 
 ## Contributing
 1. Fork the repository
-2. Create a new feature branch (`git checkout -b feature-branch`)
-3. Commit your changes (`git commit -m "Add new feature"`)
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
 4. Push to the branch (`git push origin feature-branch`)
 5. Open a Pull Request
 
-## License
-This project is licensed under the MIT License.
+## 👩‍💻 Author
 
----
+- **Chetan Dongare**  
+  [GitHub Profile](https://github.com/selenophile1805)  
+  [LinkedIn Profile](https://www.linkedin.com/in/chetan-dongare-01854022b/)
+
+Feel free to customize this file further based on your needs! Let me know if you'd like additional help. 😊
+
 
